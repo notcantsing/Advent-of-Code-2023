@@ -30,13 +30,23 @@ namespace AoC_2023.Day_1
                     if (Char.IsDigit(c))
                     {
                         numbers.Add(c);
+                        continue;
                     }
 
                     curr += c;
+
+                    for (int i = 0; i < s_Numbers.Count; i++) {
+                        if (curr.Contains(s_Numbers[i]))
+                        {
+                            numbers.Add((char)i);
+                        }
+
+                    }
                 }
 
                 //Get first and last numbers from the list
                 string calibration_Val = "";
+                Console.WriteLine(calibration_Val);
                 calibration_Val += numbers[0];
                 calibration_Val += numbers[numbers.Count - 1];
 
